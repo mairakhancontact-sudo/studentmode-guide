@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mode Guide - Complete Guide for Students</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .guide-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #e2e8f0;
+        }
+
+        .guide-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .quick-guide {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 5px solid #4f46e5;
+        }
+
+        .quick-guide h2 {
+            color: #4f46e5;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .guide-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f46e5;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
+        }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .guide-card h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .guide-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+            transform: translateY(-3px);
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 2px solid #f59e0b;
+        }
+
+        .tips-section h2 {
+            color: #92400e;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-icon {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: none;
+            }
+            
+            .action-buttons,
+            .tips-section {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-graduation-cap"></i>
+                Student Mode Guide
+            </h1>
+            <p>Complete guide for students on how to use the learning platform effectively</p>
+            <div class="badge">
+                <i class="fas fa-star"></i> Updated: January 2026
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="guide-image">
+                <img src="studentmode-guide.png" alt="Student Mode Guide Visual Instructions">
+                <div style="text-align: center; padding: 15px; background: #f8fafc; color: #64748b; font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> Click image to view full size
+                </div>
+            </div>
+
+            <div class="quick-guide">
+                <h2><i class="fas fa-bolt"></i> Quick Start Guide</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="card-icon">👥</div>
+                        <h3>Join Your Class</h3>
+                        <p>Use the 6-digit code from your teacher to join the classroom</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="card-icon">⏱️</div>
+                        <h3>Start Studying</h3>
+                        <p>Click the timer to track your study sessions and earn points</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="card-icon">🔥</div>
+                        <h3>Build Streaks</h3>
+                        <p>Study daily to maintain your streak and earn bonus points</p>
+                    </div>
+                    <div class="guide-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Track Progress</h3>
+                        <p>Monitor your improvement on the leaderboard and analytics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2><i class="fas fa-lightbulb"></i> Pro Tips for Success</h2>
+                <ul class="tips-list">
+                    <li>
+                        <span class="tip-icon">💡</span>
+                        <span><strong>Consistency is key:</strong> Study 15+ minutes daily rather than long sessions occasionally</span>
+                    </li>
+                    <li>
+                        <span class="tip-icon">🎯</span>
+                        <span><strong>Set goals:</strong> Aim for specific study targets each week</span>
+                    </li>
+                    <li>
+                        <span class="tip-icon">🔄</span>
+                        <span><strong>Use breaks:</strong> Study in 25-50 minute sessions with 5-10 minute breaks</span>
+                    </li>
+                    <li>
+                        <span class="tip-icon">📱</span>
+                        <span><strong>Stay updated:</strong> Check announcements and assignments regularly</span>
+                    </li>
+                    <li>
+                        <span class="tip-icon">🏆</span>
+                        <span><strong>Friendly competition:</strong> Use the leaderboard to motivate yourself and classmates</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Guide
+                </button>
+                <a href="studentmode-guide.png" download="StudentModeGuide.png" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download Image
+                </a>
+                <button class="btn btn-secondary" onclick="copyQuickGuide()">
+                    <i class="fas fa-copy"></i> Copy Quick Tips
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Teacher Dashboard Pro • Guide for Students</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                <i class="fas fa-question-circle"></i> Need help? Ask your teacher or email support@teacherdashboard.com
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Make image clickable to view full size
+        document.querySelector('.guide-image img').addEventListener('click', function() {
+            window.open(this.src, '_blank');
+        });
+
+        // Copy quick guide to clipboard
+        function copyQuickGuide() {
+            const quickGuide = `STUDENT MODE QUICK GUIDE:
+
+1. JOIN CLASS: Use 6-digit code from teacher
+2. STUDY TIMER: Click Start/Stop to track study time
+3. EARN POINTS: 1 hour = 100 points
+4. STREAKS: Study daily to maintain streak
+5. ASSIGNMENTS: Track due dates
+6. ANNOUNCEMENTS: Check regularly
+7. LEADERBOARD: Friendly competition
+8. ANALYTICS: Track progress
+
+Pro Tips:
+- Study 15+ minutes daily
+- Use 25-50 minute focused sessions
+- Take 5-10 minute breaks
+- Check announcements regularly
+- Set weekly study goals
+
+Need help? Ask your teacher!`;
+
+            navigator.clipboard.writeText(quickGuide).then(() => {
+                alert('Quick guide copied to clipboard! 📋');
+            });
+        }
+
+        // Add smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
